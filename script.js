@@ -16,3 +16,15 @@ function revealElements(){
 
 window.addEventListener("scroll", revealElements);
 revealElements();
+
+function redirectToProject(url) {
+    window.open(url, "_blank");
+}
+
+const projectCards = document.querySelectorAll(".project-row, .project-card");
+projectCards.forEach(card => {
+    card.addEventListener("click", () => {
+        const url = card.getAttribute("data-url");
+        redirectToProject(url);
+    });
+});
